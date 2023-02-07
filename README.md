@@ -1,4 +1,4 @@
-# books
+# Books
 My book recommendations
 
 These are books that I've read and found helpful for me, your milage may vary reading them.
