@@ -3,6 +3,10 @@ My book recommendations
 
 These are books that I've read and found helpful for me, your milage may vary reading them.
 
+# Neurodiversity
+| Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Your Brain's Not Broken | Tamara Rosier | ADHD | 9780800739423 | [Amazon Link](https://www.amazon.com/Your-Brains-Not-Broken-Strategies/dp/0800739426) | Yes |
 
 # Self-Help
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
