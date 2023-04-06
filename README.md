@@ -7,6 +7,7 @@ These are books that I've read and found helpful for me, your milage may vary re
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Your Brain's Not Broken | Tamara Rosier | ADHD | 9780800739423 | [Amazon Link](https://www.amazon.com/Your-Brains-Not-Broken-Strategies/dp/0800739426) | Yes |
+| ADHD 2.0 | Edward Hallowell and John Ratey | ADHD | 9780399178733 | [Amazon Link](https://www.amazon.com/ADHD-2-0-Essential-Strategies-Distraction/dp/0399178732) | Yes |
 
 # Self-Help
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
