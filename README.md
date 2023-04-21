@@ -21,3 +21,4 @@ These are books that I've read and found helpful for me, your milage may vary re
 | Self-Compassion: The Proven Power of Being Kind to Yourself | Dr. Kristin Neff | Self Compassion | 9780061733529 | [Amazon Link](https://www.amazon.com/gp/product/0061733520) | Yes |
 | Platonic: How the Science of Attachment Can Help You Make--and Keep--Friends | Marisa G. Franco PhD | Platonic Relationships | 9780593331897 | [Amazon Link](https://www.amazon.com/gp/product/0593331893) | Yes |
 | Attached: The New Science of Adult Attachment and How It Can Help YouFind - and Keep - Love | Amir Levine and Rachel Heller | Romantic Relationships | 9781585429134 | [Amazon Link](https://www.amazon.com/gp/product/1585429139) | Yes |
+| Opening Up: A Guide to Creating and Sustaining Open Relationships | Tristan Taormino | Relationships | 978-1573442954 | [Amazon Link](https://www.amazon.com/dp/157344295X) | Yes |
