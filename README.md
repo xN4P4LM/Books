@@ -44,5 +44,5 @@ Template for adding a book:
 |  |  |  | 978- | [Amazon Link]() | Yes |
 -->
 
-<-- Links -->
+<!-- Links -->
 [Alt-Lifestyle Ref]: ./alt-lifestyle.md
