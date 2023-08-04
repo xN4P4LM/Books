@@ -8,7 +8,7 @@ assignees: xn4p4lm
 ---
 
 ## Book Name
-<!-- This should be the full Book Name -->
+<!-- This should be the full Book Name, from the Issue Title -->
 
 ## Author(s) Name(s)
 <!-- This should be the Author(s) Name(s) -->
@@ -23,4 +23,4 @@ assignees: xn4p4lm
 <!-- This should be the books Sub category -->
 
 ## Amazon Link
-<!-- This should be the  Amazon link to purchase the book -->
+<!-- This should be the raw Amazon link to purchase the book in the format of (https://www.amazon.com/dp/) -->
