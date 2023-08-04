@@ -1,0 +1,57 @@
+name: Convert Issue to book entry
+
+## This action will convert issues to book entry in the readme.md or alt-lifestyle.md file.
+
+
+## Update when issues are opened or edited
+on:
+  issues:
+    types: [opened, edited]
+
+
+env:
+    EMAIL_DOMAIN: xn4p4lm.com
+    ISSUE_NAME: ${{ github.event.issue.title }}
+    ISSUE_NUMBER: ${{ github.event.issue.number }}
+    ISSUE_BODY: ${{ github.event.issue.body }}
+    ISSUE_CREATOR: ${{ github.event.issue.user.login }}
+    REPO_NAME: ${{ github.event.repository.name }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+# job to convert the text issue text to a book entry in a markdown column format
+    convert-issue-to-book-entry:
+        runs-on: ubuntu-latest
+        name: Convert Issue to book entry
+        steps:
+
+        # checkout the repo
+        - name: Checkout
+          uses: actions/checkout@v2
+        
+        # This Section does the following: 
+        # 1. Setsup the python environment
+        # 2. Installs the python dependencies
+        # 3. Runs the python script that does the following steps:    
+            # 1. Read the relevant information from the environment variables
+            # 2. Convert the issue text to a book entry in a markdown column format
+            # 3. Append the book entry to either the readme.md or alt-lifestyle.md file
+            # 4. Commit the changes to the repo
+            # 5. Push the changes to the repo
+            # 6. Create a pull request, referencing the issue, and assign it to the issue creator
+            # 7. Add the issue to the project board
+        
+        # Setup the python environment
+        - name: Install Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.11'
+        # Install the python dependencies
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install -r scripts/requirements.txt
+        # Run the python script
+        - name: run python script
+          run: |
+            python scripts/convert-issue-to-book-entry.py
