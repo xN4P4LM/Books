@@ -25,6 +25,7 @@ You can also check out the [Alt Lifestyle page][Alt-Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Self-Compassion: The Proven Power of Being Kind to Yourself | Dr. Kristin Neff | Self Compassion | 978-0061733529 | [Amazon Link](https://www.amazon.com/gp/product/0061733520) | Yes |
+| Friendship: The Aspie Way | Wendy Lawson | Autism | 978-1843104278 | [Amazon Link](https://www.amazon.com/dp/184310427X) | Yes |
 
 # Relationships
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
