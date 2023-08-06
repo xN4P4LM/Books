@@ -1,0 +1,261 @@
+name: Convert Issue to book entry
+
+# This Action does the following and runs when issues are opened, edited, or closed: 
+
+# Convert the issue text to a book entry in a markdown column format and commit the changes to the repo
+  # 1. Setsup the python environment
+  # 2. Installs the python dependencies
+  # 3. Runs the python script that does the following steps:    
+      # 1. Read the relevant information from the environment variables
+      # 2. Convert the issue text to a book entry in a markdown column format
+      # 3. Append the book entry to either the readme.md or alt-lifestyle.md file
+      # 4. Commit the changes to the repo
+      # 5. Push the changes to the repo
+      # 6. Create a pull request, referencing the issue, and assign it to the issue creator
+
+# Add the issue to the project board
+  # 1. Get the project node id from the first project name in the repository
+  # 2. Add the issue to the project board
+  # 3. Update the project board status to the status specified in the environment variables
+
+
+on:
+  issues:
+    types: [opened, edited, closed]
+
+env:
+    EMAIL_DOMAIN: ${{ vars.EMAIL_DOMAIN }}
+    ISSUE_NAME: ${{ github.event.issue.title }}
+    ISSUE_NUMBER: ${{ github.event.issue.number }}
+    ISSUE_BODY: ${{ github.event.issue.body }}
+    ISSUE_CREATOR: ${{ github.event.issue.user.login }}
+    ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
+    REPO_NAME: ${{ github.event.repository.name }}
+    GITHUB_TOKEN: ${{ secrets.PROJECTS_GITHUB_TOKEN }}
+    ALT_LIFESTYLE: ${{ vars.ALT_LIFESTYLE }}
+    PENDING_CHANGES: FALSE
+
+jobs:
+    # job to convert the text issue text to a book entry in a markdown column format
+    convert-issue-to-book-entry:
+      permissions: write-all
+      runs-on: ubuntu-latest
+      if: ${{ github.event.action == 'opened' || github.event.action == 'edited'}}
+      name: Convert Issue to book entry
+      steps:
+
+      # create a branch for the issue using gh cli
+      - name: Create branch
+        run: |
+          # create the repo name in owner/repo format
+          REPO_NAME="${{ github.repository_owner }}/${{ env.REPO_NAME }}"
+
+          # get the default branch for the repo
+          DEFAULT_BRANCH=$(gh api repos/$REPO_NAME | jq -r '.default_branch')
+
+          # create the branch name
+          BASE_BRANCH="issue-${{ env.ISSUE_NUMBER }}"
+
+          # get the current sha of the default branch
+          REF=$(gh api repos/$REPO_NAME/git/refs/heads/$DEFAULT_BRANCH | jq -r '.object.sha')
+
+          # check if the branch already exists
+          if gh api repos/$REPO_NAME/git/refs/heads/$BASE_BRANCH | jq -e '.ref' > /dev/null
+
+          then
+            # if it does, echo a message
+            echo "Branch already exists"
+
+          else
+            # if it doesn't exist, create the branch
+            gh api repos/$REPO_NAME/git/refs \
+              -f ref="refs/heads/$BASE_BRANCH" \
+              -f sha=$REF
+          fi
+
+      # checkout the repo
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: issue-${{ env.ISSUE_NUMBER }}
+
+      # Run git pull to get the latest changes
+      - name: Git Pull
+        run: |
+          git branch --set-upstream-to=origin/issue-${{ env.ISSUE_NUMBER }} issue-${{ env.ISSUE_NUMBER }}
+          git pull
+      
+      # Setup the python environment
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip' # caching pip dependencies
+
+      # Install the python dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      # Run the python script
+      - name: run python script
+        run: |
+          python scripts/convert-issue-to-book-entry.py
+
+      # run git status to see if there are pending change and if not write to env variable
+      - name: Git Status
+        run: |
+          if [[ -n $(git status --porcelain | grep "M") ]]; then
+            echo 'PENDING_CHANGES=TRUE' >> $GITHUB_ENV
+          else
+            echo 'PENDING_CHANGES=FALSE' >> $GITHUB_ENV
+          fi
+
+          echo "PENDING_CHANGES=$PENDING_CHANGES"
+      
+      # Commit the changes to the repo 
+      - name: Commit changes
+        if : ${{ env.PENDING_CHANGES == 'TRUE' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          #check if the file stored in .files_changed needs to be added to the commit
+          file_changed=$(cat .files_changed)
+
+          # echo the git diff to the console
+          git diff $file_changed
+
+          # diff the file to see if there are any changes
+          if [ -n "$(git diff $file_changed)" ]
+          then
+            # if there are changes, add the file to the commit
+            git add $file_changed
+            git commit -m "Adding issue #${{ env.ISSUE_NUMBER }} as a book entry"
+          else
+            # if there are no changes, echo a message
+            echo "No changes to commit"
+          fi
+          echo "files changed: $file_changed"
+
+      # Push the changes to the repo
+      - name: Push changes
+        if : ${{ env.PENDING_CHANGES == 'TRUE' }}
+        run: |
+          # echo the git log to the console
+          git log origin/issue-${{ env.ISSUE_NUMBER }}..HEAD
+
+          # echo the git diff to the console
+          git diff origin/issue-${{ env.ISSUE_NUMBER }}..HEAD
+
+          # check if there are any commits to push
+          if [ -n "$(git diff origin/issue-${{ env.ISSUE_NUMBER }}..HEAD)" ]
+          then
+            echo "There are commits to push"
+            git push
+          else
+            echo "There are no commits to push"
+          fi
+      
+      # Create or edit a pull request, reference this issue and branch, and then assign it to the issue creator
+      - name: Create Pull Request
+        run: |
+          # Get the relevant environment variables 
+          ISSUE_NAME="${{ env.ISSUE_NAME }}"
+          ISSUE_NUMBER="${{ env.ISSUE_NUMBER }}"
+          ISSUE_CREATOR="${{ env.ISSUE_CREATOR }}"
+          FILES_CHANGED=$(cat .files_changed)
+          ISSUE_BODY=$(python scripts/issue-body-template.py)
+
+          # Get the defualt branch
+          DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+
+          # Remove the files_changed so there are no unstaged changes
+          rm .files_changed
+
+          # check if a PR exists for the issue
+          if gh pr list --search "issue-$ISSUE_NUMBER" --json number | jq -e '.[0].number' > /dev/null
+          then
+            # if it does, update the PR body
+            gh pr edit --title "Adds $ISSUE_NAME to $FILES_CHANGED" --body "$ISSUE_BODY" --base "$DEFAULT_BRANCH"
+          else
+            # if it doesn't, create the PR
+            gh pr create --title "Adds $ISSUE_NAME to $FILES_CHANGED" --body "$ISSUE_BODY" --base "$DEFAULT_BRANCH"  --assignee "$ISSUE_CREATOR"
+          fi
+
+    # This job will add the issue to the project board
+    add-issue-to-project-board:
+      name: Add Issue to Project Board
+      runs-on: ubuntu-latest
+      if: ${{ github.event.action == 'opened' || github.event.action == 'edited' || github.event.action == 'closed' }}
+      env:
+        STATUS: ${{ 
+          (github.event == 'opened' && 'To Read') || 
+          (github.event == 'edited' && 'To Read') ||
+          (github.event == 'closed' && 'Read') }}
+        PROJECT_STATUS: ${{ vars.PROJECT_STATUS }}
+        PROJECT_NODE_ID: ""
+        PROJECT_ITEM_NODE_ID: ""
+        STATUS_ID: ""
+        STATUS_FIELD_ID: ""
+        
+      steps:
+        # This step will get the project node id from the first project name in the repository
+        - name: Get Project Data
+          run: |
+            gh api graphql -f query='
+            query User {
+              user(login: "${{ env.ISSUE_CREATOR }}") {
+                  projectV2(number: 5) {
+                      id
+                      fields(first: 10) {
+                          nodes {
+                              ... on ProjectV2SingleSelectField {
+                                  id
+                                  options(names: "${{ env.PROJECT_STATUS }}") {
+                                      name
+                                      id
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+            }' > projects_data.json
+            echo 'PROJECT_NODE_ID='$(jq '.data.user.projectV2.id' projects_data.json) >> $GITHUB_ENV
+            echo 'STATUS_FIELD_ID='$(jq '.data.user.projectV2.fields.nodes[] | select (.id !=null) | .id' projects_data.json) >> $GITHUB_ENV
+            echo 'STATUS_ID='$(jq '.data.user.projectV2.fields.nodes[] | select (.id !=null) | .options[] | .id' projects_data.json) >> $GITHUB_ENV
+
+
+        # This will add the issue to the project board
+        - name: Add Issue to Project Board
+          run: |
+            item_id="$( gh api graphql -f query='
+              mutation {
+              addProjectV2ItemById(
+                input: {
+                  projectId: ${{ env.PROJECT_NODE_ID }},
+                  contentId: "${{ env.ISSUE_NODE_ID }}"
+                })
+                {
+                  item {
+                    id
+                  }
+                }
+            }' --jq '.data.addProjectV2ItemById.item.id')"
+            echo 'PROJECT_ITEM_NODE_ID='$item_id >> $GITHUB_ENV
+        
+        # This will update the project board status to the status specified in the environment variables
+        - name: Update Project Board Status
+          run: |
+            gh api graphql -f query='
+              mutation {
+                updateProjectV2ItemFieldValue(
+                    input: {projectId: ${{ env.PROJECT_NODE_ID }}, itemId: "${{ env.PROJECT_ITEM_NODE_ID }}", value: {singleSelectOptionId: ${{ env.STATUS_ID }}}, fieldId: ${{ env.STATUS_FIELD_ID }}}
+                ) {
+                    clientMutationId
+                }
+              }'
