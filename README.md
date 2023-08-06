@@ -32,6 +32,11 @@ You can also check out the [Alt Lifestyle page][Alt-Lifestyle Ref] for books tha
 | Platonic: How the Science of Attachment Can Help You Make--and Keep--Friends | Marisa G. Franco PhD | Platonic Relationships | 978-0593331897 | [Amazon Link](https://www.amazon.com/gp/product/0593331893) | Yes |
 | Attached: The New Science of Adult Attachment and How It Can Help YouFind - and Keep - Love | Amir Levine and Rachel Heller | Romantic Relationships | 978-1585429134 | [Amazon Link](https://www.amazon.com/gp/product/1585429139) | Yes |
 
+# Communication
+| Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
+| --------- | ------ | ----------- | ------- | ----------- | ---------- |
+| Nonviolent Communication: A Language of Life | Marshall B. Rosenberg PhD | Relationships | 978-1892005281 | [Amazon Link](https://www.amazon.com/dp/189200528X) | Yes |
+
 
 <!--
 Template for a new category:
