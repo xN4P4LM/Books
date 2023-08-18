@@ -48,7 +48,7 @@ jobs:
     convert-issue-to-book-entry:
       permissions: write-all
       runs-on: ubuntu-latest
-      if: ${{ (github.event.action == 'opened' || github.event.action == 'edited') && github.event.label.name == 'Book' && github.event.issue.user.login == 'xn4p4lm' }}
+      if: ${{ (github.event.action == 'opened' || github.event.action == 'edited') && github.event.issue.user.login == 'xn4p4lm' }}
       name: Convert Issue to book entry
       steps:
 
