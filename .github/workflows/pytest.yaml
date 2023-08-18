@@ -24,7 +24,12 @@ env:
     README: ${{ vars.README }}
 
     LINES_TO_SKIP: ${{ vars.LINES_TO_SKIP }}
-    
+
+    # testing variables
+    ISSUE_NAME: "Test Issue"
+    ISSUE_NUMBER: 42
+    ISSUE_BODY: "test issue body"
+    ISSUE_CREATOR: "test-user"
 
 jobs:
     test:
