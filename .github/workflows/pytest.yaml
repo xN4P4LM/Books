@@ -32,7 +32,7 @@ env:
     ISSUE_CREATOR: "test-user"
 
 jobs:
-    test:
+    unit-testing-with-pytest:
         runs-on: ubuntu-latest
         steps:
             # checkout the repo
