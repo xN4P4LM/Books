@@ -1,6 +1,5 @@
 
 import logging
-import pytest
 
 # import convert_issue_to_book_entry as ci
 from issue_body_template import *

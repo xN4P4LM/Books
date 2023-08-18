@@ -23,15 +23,15 @@ def create_pr_body(test=False):
 
     file_name = None
 
-    # Get the file name from the .files_changed file
-    with open('.files_changed') as f:
-        file_name = f.read().strip()
-
     # if test is true then set file_name to test_file.md
     if test:
         file_name = "test_file.md"
         issue_name = "Test Issue"
         issue_number = "42"
+    else:
+        # Get the file name from the .files_changed file
+        with open('.files_changed') as f:
+            file_name = f.read().strip()
 
     if (issue_name == None or issue_number == None or file_name == None):
         raise ValueError("ISSUE_NAME or ISSUE_NUMBER is not set of no file has been changed")
