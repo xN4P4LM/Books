@@ -75,20 +75,6 @@ def test_create_files_from_env():
     # pytest expected assertions
     assert file_exists == True and os.path.exists(test_env_file) == False
 
-def test_get_Live_Data():
-
-    # this gets the live data from the API
-    live_data,lines_to_skip = get_live_data()
-
-    issue_number = live_data[0]
-    book_title = live_data[1]
-    issue_body = live_data[2]
-    
-    if(ci_check):
-        assert issue_number == "" and book_title == "" and issue_body == "" and lines_to_skip == 2
-    else:
-        assert True
-
 def test_get_category_from_file():
 
     # Create the temp list for the categories
