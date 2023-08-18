@@ -274,8 +274,14 @@ def test_get_live_data():
         # this gets the live data from the API
         live_data,lines_to_skip = get_live_data()
 
+        # debug log the live data
+        logging.debug("Live data: " + str(live_data))
+
         # create an array of the expected live data
         expected_live_data = [os.getenv("ISSUE_NUMBER"),os.getenv("ISSUE_NAME"),os.getenv("ISSUE_BODY")]
+
+        # debug log the expected live data
+        logging.debug("Expected live data: " + str(expected_live_data))
 
         # this checks if the live data is correct
         assert live_data == expected_live_data and lines_to_skip == os.getenv("LINES_TO_SKIP")
