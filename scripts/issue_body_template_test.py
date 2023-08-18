@@ -12,7 +12,7 @@ It adds the book Test Issue to test_file.md as part of #42
 
 This PR will close issue: #42 through the following branch issue-42
 
-**NOTE: This template is managed by [templates/pr-body-template.j2](https://github.com/xn4p4lm/Books/blob/main/templates/pr-body-template.j2)"""
+**NOTE: This template is managed by [templates/pr-body-template.j2](https://github.com/xn4p4lm/Books/blob/main/templates/pr-body-template.j2)**"""
 
 # define the test function
 def test_create_pr_body():
