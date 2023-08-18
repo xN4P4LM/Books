@@ -21,7 +21,7 @@ name: Convert Issue to book entry
 
 on:
   issues:
-    types: labeled
+    types: [opened, edited, closed]
 
 env:
     EMAIL_DOMAIN: ${{ vars.EMAIL_DOMAIN }}
@@ -48,7 +48,7 @@ jobs:
     convert-issue-to-book-entry:
       permissions: write-all
       runs-on: ubuntu-latest
-      if: ${{ (github.event.action == 'opened' || github.event.action == 'edited') && github.event.label.name == 'Book'}}
+      if: ${{ (github.event.action == 'opened' || github.event.action == 'edited') && github.event.label.name == 'Book' && github.event.issue.user.login == 'xn4p4lm' }}
       name: Convert Issue to book entry
       steps:
 
@@ -198,10 +198,11 @@ jobs:
     add-issue-to-project-board:
       name: Add Issue to Project Board
       runs-on: ubuntu-latest
-      if: ${{ github.event.action == 'opened' || github.event.action == 'closed' }}
+      if: ${{ github.event.action == 'opened' || github.event.action == 'edited' || github.event.action == 'closed' }}
       env:
         STATUS: ${{ 
           (github.event == 'opened' && 'To Read') || 
+          (github.event == 'edited' && 'To Read') ||
           (github.event == 'closed' && 'Read') }}
         PROJECT_STATUS: ${{ vars.PROJECT_STATUS }}
         PROJECT_NODE_ID: ""
