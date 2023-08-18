@@ -109,7 +109,7 @@ jobs:
       # Run the python script
       - name: run python script
         run: |
-          python scripts/convert-issue-to-book-entry.py
+          python scripts/convert_issue_to_book_entry.py
 
       # run git status to see if there are pending change and if not write to env variable
       - name: Git Status
@@ -176,7 +176,7 @@ jobs:
           ISSUE_NUMBER="${{ env.ISSUE_NUMBER }}"
           ISSUE_CREATOR="${{ env.ISSUE_CREATOR }}"
           FILES_CHANGED=$(cat .files_changed)
-          ISSUE_BODY=$(python scripts/issue-body-template.py)
+          ISSUE_BODY=$(python scripts/issue_body_template.py)
 
           # Get the defualt branch
           DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
