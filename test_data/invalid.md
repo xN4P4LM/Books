@@ -1,12 +1,3 @@
----
-name: New Book
-about: This template is for adding a new book to this repository
-title: Book Name
-labels: 'Book'
-assignees: xn4p4lm
-
----
-
 ## Book Name
 <!-- This should be the full Book Name, from the Issue Title -->
 

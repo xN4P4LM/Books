@@ -1,0 +1,3 @@
+[submodule "py_venv_manager"]
+	path = .py_venv_manager
+	url = https://github.com/xN4P4LM-org/py_venv_manager
