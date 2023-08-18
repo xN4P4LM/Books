@@ -1,4 +1,3 @@
-from doctest import debug
 import pytest
 
 # import convert_issue_to_book_entry as ci

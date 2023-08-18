@@ -10,12 +10,8 @@
 
 
 # import the necessary libraries to read the environment variables
-from math import log
-from operator import contains
 import os
 import logging
-import random
-from xml.etree.ElementTree import QName
 
 LEADING_CHARACTERS_TO_STRIP = 2
 DELIMITER = str("#")
