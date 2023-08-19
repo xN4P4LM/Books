@@ -3,7 +3,7 @@ My book recommendations
 
 These are books that I've read and found helpful for me, your milage may vary reading them.
 
-You can also check out the [Alt Lifestyle page][Alt-Lifestyle Ref] for books that cover topics that aren't the mainstream.
+You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books that cover topics that aren't the mainstream.
 
 # Neurodiversity
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
@@ -45,4 +45,4 @@ Template for adding a book:
 -->
 
 <!-- Links -->
-[Alt-Lifestyle Ref]: ./alt-lifestyle.md
+[Alt_Lifestyle Ref]: ./alt_lifestyle.md
