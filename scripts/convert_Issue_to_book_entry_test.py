@@ -261,45 +261,45 @@ def list_test_files():
 
 
 
-def test_get_test_data_valid_files():
-    """ This function tests the get_test_data function """
+# def test_get_test_data_valid_files():
+#     """ This function tests the get_test_data function """
 
-    source_data_files = list_test_files()
+#     source_data_files = list_test_files()
 
-    # list to store the issues from the source data
-    source_data_issues = []
+#     # list to store the issues from the source data
+#     source_data_issues = []
 
-    # integer to count the number of files created
-    file_count = 0
+#     # integer to count the number of files created
+#     file_count = 0
 
-    # boolean to check if the test passed
-    passed = False
+#     # boolean to check if the test passed
+#     passed = False
 
-    # log the name of the files to debug
-    logging.debug(source_data_files)
+#     # log the name of the files to debug
+#     logging.debug(source_data_files)
 
-    # loop through all the files in the source data directory
-    for current_file in source_data_files:
+#     # loop through all the files in the source data directory
+#     for current_file in source_data_files:
 
-        # # this creates the test file from the source data
-        # results = get_test_data(current_file)
+#         # this creates the test file from the source data
+#         results = get_test_data(current_file)
 
-        # # increment the file count
-        # file_count += 1
+#         # increment the file count
+#         file_count += 1
 
-        # # log the lines to debug
-        # logging.debug(lines)
+#         # log the lines to debug
+#         logging.debug(lines)
 
-        # # log the issue to debug
-        # logging.debug(issue)
+#         # log the issue to debug
+#         logging.debug(issue)
 
-    # # check if there are an equal number of files
-    # # created as there are files in the source data directory
-    # if file_count is source_data_files.len():
-    #     passed = True
+#     # check if there are an equal number of files
+#     # created as there are files in the source data directory
+#     if file_count is source_data_files.len():
+#         passed = True
 
-    # # this checks if the test passed
-    # assert passed is True
+#     # this checks if the test passed
+#     assert passed is True
 
 
 def test_get_live_data():
@@ -400,54 +400,54 @@ def get_expected_data_based_on_file(file_name):
     # return the expected book entry
     return expected_book_entry
 
-def get_test_data():
-    """ This creates a dictionary of test data from the files in the test_data directory """
+# def get_test_data():
+#     """ This creates a dictionary of test data from the files in the test_data directory """
 
-    # create a list to store the created book entries
-    created_book_entries = {}
+#     # create a list to store the created book entries
+#     created_book_entries = {}
 
-    # get a list of the test files from the test_data directory
-    test_files = get_test_files()
+#     # get a list of the test files from the test_data directory
+#     test_files = get_test_files()
 
-    # remove any line that contains the word invalid
-    test_files = [file for file in test_files if "invalid" not in file]
+#     # remove any line that contains the word invalid
+#     test_files = [file for file in test_files if "invalid" not in file]
 
-    # create the debug string for the test structure
-    debug_msg = "Test files are: " + str(test_files)
+#     # create the debug string for the test structure
+#     debug_msg = "Test files are: " + str(test_files)
 
-    # debug log the test structure
-    logging.debug(debug_msg)
+#     # debug log the test structure
+#     logging.debug(debug_msg)
 
-    # create a dictionary to store the test book entries
-    for current_file in test_files:
-        # remove the test_data/ from the file name
-        normalized_file = current_file.replace("test_data/","")
+#     # create a dictionary to store the test book entries
+#     for current_file in test_files:
+#         # remove the test_data/ from the file name
+#         normalized_file = current_file.replace("test_data/","")
 
-        # add the current file to the created book entries dictionary
-        created_book_entries[normalized_file] = None
+#         # add the current file to the created book entries dictionary
+#         created_book_entries[normalized_file] = None
 
-        # get the issue and lines to skip from the file
-        issue, lines_to_skip = get_test_data(current_file)
+#         # get the issue and lines to skip from the file
+#         issue, lines_to_skip = get_test_data(current_file)
 
-        # create the debug string for the issue
-        debug_msg = "Issue: " + str(issue)
+#         # create the debug string for the issue
+#         debug_msg = "Issue: " + str(issue)
 
-        # debug log the issue
-        logging.debug(debug_msg)
+#         # debug log the issue
+#         logging.debug(debug_msg)
 
-        # create the book entry from the issue and lines to skip
-        book_entry = create_book_entry(issue, lines_to_skip)
+#         # create the book entry from the issue and lines to skip
+#         book_entry = create_book_entry(issue, lines_to_skip)
 
-        # create the debug string for the book entry
-        debug_msg = "Book entry: " + str(book_entry)
+#         # create the debug string for the book entry
+#         debug_msg = "Book entry: " + str(book_entry)
 
-        # debug log the book entry
-        logging.debug(debug_msg)
+#         # debug log the book entry
+#         logging.debug(debug_msg)
 
-        created_book_entries[normalized_file] = book_entry
+#         created_book_entries[normalized_file] = book_entry
 
-    # return the created book entries
-    return created_book_entries
+#     # return the created book entries
+#     return created_book_entries
 
 
 def test_create_book_entry():

@@ -600,7 +600,7 @@ def get_live_data():
     # return the issue
     return issue, lines_to_skip
 
-def get_test_data(file):
+def get_test_data(file = "test_data/alt-lifestyle.md"):
     """ This function creates the test data """
 
     # create an array to hold the issue information
