@@ -25,6 +25,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Self-Compassion: The Proven Power of Being Kind to Yourself | Dr. Kristin Neff | Self Compassion | 978-0061733529 | [Amazon Link](https://www.amazon.com/gp/product/0061733520) | Yes |
+| Nerdy, Shy, and Socially Inappropriate: A User Guide to an Asperger Life | Cynthia Kim | Autism | 978-1849057578 | [Amazon Link](https://www.amazon.com/dp/1849057575) | Yes |
 
 # Relationships
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
