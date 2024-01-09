@@ -1,0 +1,13 @@
+# ignore all dotfiles
+.* 
+
+# include any dotfile that starts with .git
+!.git*
+
+py_venv_manager
+
+# ignore venv folders
+*venv*/
+
+# ignore python cache
+__pycache__

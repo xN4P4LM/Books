@@ -32,15 +32,23 @@ env:
     ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
     REPO_NAME: ${{ github.event.repository.name }}
     GITHUB_TOKEN: ${{ secrets.PROJECTS_GITHUB_TOKEN }}
-    ALT_LIFESTYLE: ${{ vars.ALT_LIFESTYLE }}
     PENDING_CHANGES: FALSE
+
+    # Load files from the repository variables
+    FILES: ${{ vars.FILES }}
+
+    # Load categories from the repository variables
+    ALT_LIFESTYLE: ${{ vars.ALT_LIFESTYLE }}
+    README: ${{ vars.README }}
+
+    LINES_TO_SKIP: ${{ vars.LINES_TO_SKIP }}
 
 jobs:
     # job to convert the text issue text to a book entry in a markdown column format
     convert-issue-to-book-entry:
       permissions: write-all
       runs-on: ubuntu-latest
-      if: ${{ github.event.action == 'opened' || github.event.action == 'edited'}}
+      if: ${{ (github.event.action == 'opened' || github.event.action == 'edited') && github.event.issue.user.login == 'xn4p4lm' }}
       name: Convert Issue to book entry
       steps:
 
@@ -101,7 +109,7 @@ jobs:
       # Run the python script
       - name: run python script
         run: |
-          python scripts/convert-issue-to-book-entry.py
+          python scripts/convert_issue_to_book_entry.py
 
       # run git status to see if there are pending change and if not write to env variable
       - name: Git Status
@@ -168,7 +176,7 @@ jobs:
           ISSUE_NUMBER="${{ env.ISSUE_NUMBER }}"
           ISSUE_CREATOR="${{ env.ISSUE_CREATOR }}"
           FILES_CHANGED=$(cat .files_changed)
-          ISSUE_BODY=$(python scripts/issue-body-template.py)
+          ISSUE_BODY=$(python scripts/issue_body_template.py)
 
           # Get the defualt branch
           DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
