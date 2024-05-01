@@ -9,7 +9,8 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Your Brain's Not Broken | Tamara Rosier | ADHD | 978-0800739423 | [Amazon Link](https://www.amazon.com/Your-Brains-Not-Broken-Strategies/dp/0800739426) | Yes |
-| ADHD 2.0 | Edward Hallowell and John Ratey | ADHD | 978-0399178733 | [Amazon Link](https://www.amazon.com/ADHD-2-0-Essential-Strategies-Distraction/dp/0399178732) | Yes | 
+| ADHD 2.0 | Edward Hallowell and John Ratey | ADHD | 978-0399178733 | [Amazon Link](https://www.amazon.com/ADHD-2-0-Essential-Strategies-Distraction/dp/0399178732) | Yes |
+| Friendship: The Aspie Way | Wendy Lawson | Autism | 978-1843104278 | [Amazon Link](https://www.amazon.com/dp/184310427X) | Yes |
 
 # Mental Health
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
@@ -26,7 +27,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Self-Compassion: The Proven Power of Being Kind to Yourself | Dr. Kristin Neff | Self Compassion | 978-0061733529 | [Amazon Link](https://www.amazon.com/gp/product/0061733520) | Yes |
 | Divergent Mind: Thriving in a World That Wasn't Designed for You | Jenara Nerenberg | Mental Health | 978-0062876799 | [Amazon Link](https://www.amazon.com/dp/0062876805) | Yes |
-| Friendship: The Aspie Way | Wendy Lawson | Autism | 978-1843104278 | [Amazon Link](https://www.amazon.com/dp/184310427X) | Yes |
+| Sensitive: The Hidden Power of the Highly Sensitive Person in a Loud, Fast, Too-Much World  | Jenn Granneman and Andre Sólo | Sensory processing sensitivity | 978-0593235010 | [Amazon Link](https://www.amazon.com/Sensitive-Hidden-Highly-Person-Too-Much/dp/0593235010) | Yes |
 
 # Relationships
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
