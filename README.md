@@ -21,6 +21,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | The Mountain Is You: Transforming Self-Sabotage Into Self-Mastery | Brianna Wiest | Self Doubt | 978-1949759228 | [Amazon Link](https://www.amazon.com/gp/product/1949759229) | Yes |
+| Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones | James Clear  | Habits | 978-0735211292 | [Amazon Link](https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299) | Yes |
 
 # Psychology
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
