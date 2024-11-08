@@ -16,6 +16,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | How to Be Yourself: Quiet Your Inner Critic and Rise Above Social Anxiety | Ellen Hendriksen | Social Anxiety Disorder | 978-1250161703 | [Amazon Link](https://www.amazon.com/How-Be-Yourself-Critic-Anxiety/dp/1250161703) | Yes |
+| The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma | Bessel van der Kolk M.D. | PTSD / cPTSD | 978-0143127741 | [Amazon Link](https://www.amazon.com/Order-Chaos-Everyday-Staying-Organized/dp/0578578875) | Yes |
 
 # Self-Help
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
