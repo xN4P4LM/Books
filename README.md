@@ -39,6 +39,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Platonic: How the Science of Attachment Can Help You Make--and Keep--Friends | Marisa G. Franco PhD | Platonic Relationships | 978-0593331897 | [Amazon Link](https://www.amazon.com/gp/product/0593331893) | Yes |
 | Attached: The New Science of Adult Attachment and How It Can Help YouFind - and Keep - Love | Amir Levine and Rachel Heller | Romantic Relationships | 978-1585429134 | [Amazon Link](https://www.amazon.com/gp/product/1585429139) | Yes |
+| The Friendship Formula: How to Say Goodbye to Loneliness and Discover Deeper Connection | Kyler Shumway, PsyD | Friendship | 979-8377553724 | [Amazon Link](https://www.amazon.com/dp/B0BW2KJN3T) | Yes |
 
 # Communication
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
