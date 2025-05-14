@@ -18,6 +18,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | How to Be Yourself: Quiet Your Inner Critic and Rise Above Social Anxiety | Ellen Hendriksen | Social Anxiety Disorder | 978-1250161703 | [Amazon Link](https://www.amazon.com/dp/1250161703) | Yes |
 | The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma | Bessel van der Kolk M.D. | PTSD / cPTSD | 978-0143127741 | [Amazon Link](https://www.amazon.com/dp/0143127748) | Yes |
+| Waking the Tiger: Healing Trauma |  Peter A. Levine | Post-Traumatic Stress | 978-1556432330 | [Amazon Link](https://www.amazon.com/dp/155643233X) | Yes |
 
 # Self-Help
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
@@ -45,6 +46,11 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
 | --------- | ------ | ----------- | ------- | ----------- | ---------- |
 | Nonviolent Communication: A Language of Life | Marshall B. Rosenberg PhD | Relationships | 978-1892005281 | [Amazon Link](https://www.amazon.com/dp/189200528X) | Yes |
+
+# Spirituality
+| Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| When Things Fall Apart: Heart Advice for Difficult Times | Pema Chodron |  Tibetan Buddhism  | 978-1611803433 | [Amazon Link](https://www.amazon.com/dp/1611803438) | Yes |
 
 
 <!--
