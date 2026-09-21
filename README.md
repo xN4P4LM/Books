@@ -35,6 +35,7 @@ You can also check out the [Alt Lifestyle page][Alt_Lifestyle Ref] for books tha
 | Divergent Mind: Thriving in a World That Wasn't Designed for You | Jenara Nerenberg | Mental Health | 978-0062876799 | [Amazon Link](https://www.amazon.com/dp/0062876805) | Yes |
 | Sensitive: The Hidden Power of the Highly Sensitive Person in a Loud, Fast, Too-Much World  | Jenn Granneman and Andre Sólo | Sensory processing sensitivity | 978-0593235010 | [Amazon Link](https://www.amazon.com/dp/0593235010) | Yes |
 | Set Boundaries, Find Peace: A Guide to Reclaiming Yourself | Nedra Glover Tawwab | Boundaries | 978-0593192092 | [Amazon Link](https://www.amazon.com/Set-Boundaries-Find-Peace-Reclaiming/dp/0593192095) | Yes |
+| Complex PTSD: From Surviving to Thriving | Pete Walker | Trauma | 978-1492871842 | [Amazon Link](https://www.amazon.com/Complex-PTSD-Surviving-RECOVERING-CHILDHOOD/dp/1492871842) | Yes |
 
 # Relationships
 | Book name | Author | SubCategory | ISBN-13 | Amazon Link | Have Read? |
